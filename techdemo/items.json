@@ -1,0 +1,139 @@
+[
+    {
+        "ID":       "000",
+        "name":         "bob's pen",
+        "synonyms":     "pen",
+        "description":  "It's Bob's pen.",
+        "weight": "0.1",
+
+        "states": [],
+        "actions": []
+    },
+    {
+        "ID":       "001",
+        "name":         "a coffee cup",
+        "synonyms":     "coffee cup, cup, coffee mug, mug",
+        "description":  "It's a white coffee cup.",
+        "weight": "0.2",
+
+        "states": [
+            {
+                "name": "isFilled",
+                "options": [
+                    {
+                        "value": "00",
+                        "description": "It's empty."
+                    },
+                    {
+                        "value": "01",
+                        "description": "It's full of {drinkType}"
+                    }
+                ]
+            },
+            {
+                "name": "drinkType",
+                "options": [
+                    {
+                        "value": "10",
+                        "description": "ice water. It's cold."
+                    },
+                    {
+                        "value": "11",
+                        "description": "coffee. It's hot!"
+                    },
+                    {
+                        "value": "12",
+                        "description": "orange juice."
+                    }
+                ]
+            }
+        ],
+
+        "actions": [
+            {
+                "command": "drink chug swallow sip taste",
+                "requiredValues":
+                {
+                    "isFilled": "01"
+                },
+
+                "setValues": [
+                    {
+                        "parameter": "",
+                        "isFilled": "00"
+                    }
+                ],
+
+                "successResponse": "You drink the {drinkType}.",
+                "failureResponse": "The coffee cup is empty!"
+            },
+            {
+                "command": "fill",
+                "requiredValues":
+                {
+                    "requiredPreposition": "with",
+                    "requiresParameter": "True",
+                    "isFilled": "00"
+                },
+
+                "setValues": [
+                    {
+                        "parameter": "002",
+                        "drinkType": "10"
+                    },
+                    {
+                        "parameter": "003",
+                        "drinkType": "11"
+                    },
+                    {
+                        "parameter": "004",
+                        "drinkType": "12"
+                    }
+                ],
+
+                "successResponse": "You fill the mug with {parameter}.",
+                "failureResponse": "You can't fill the mug with that!"
+            }
+        ]
+    },
+    {
+        "ID":       "002",
+        "name":         "a pitcher of ice water",
+        "synonyms":     "pitcher of ice water, ice water pitcher, ice water, pitcher of water, water pitcher, water",
+        "description":  "It's a clear pitcher of ice water. It's too big to drink from directly.",
+        "weight": "1",
+
+        "states": [],
+        "actions": []
+    },
+    {
+        "ID":       "003",
+        "name":         "a pot of coffee",
+        "synonyms":     "pot of coffee, carafe of coffee, carafe, coffee pot, pot, coffee",
+        "description":  "It's a steaming hot pot of coffee. It's too big to drink from directly.",
+        "weight": "1",
+
+        "states": [],
+        "actions": []
+    },
+    {
+        "ID":       "004",
+        "name":         "a carton of orange juice",
+        "synonyms":     "carton of orange juice, orange juice carton, juice carton, carton, orange juice, juice",
+        "description":  "It's a carton of sweet orange juice. It's too big to drink from directly.",
+        "weight": "1",
+
+        "states": [],
+        "actions": []
+    },
+    {
+        "ID":       "005",
+        "name":         "a widget",
+        "synonyms":     "widget",
+        "description":  "Something for you to hold to demonstrate inventory management.",
+        "weight": "0.1",
+
+        "states": [],
+        "actions": []
+    }
+]

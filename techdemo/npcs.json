@@ -1,0 +1,11 @@
+[
+    {
+        "ID": "000",
+        "name": "bob",
+        "description": "It's Bob.",
+        "patrol": "000, 002, 001",
+        "speed": "2",
+
+        "affiliation": "friendly"
+    }
+]

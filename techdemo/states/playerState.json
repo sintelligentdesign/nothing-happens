@@ -1,0 +1,14 @@
+[
+    {
+        "ID": "0",
+
+        "location": "000",
+
+        "health": "100",
+
+        "buffs": [],
+        "debuffs": [],
+
+        "inventory": ["005"]
+    }
+]

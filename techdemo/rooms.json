@@ -1,0 +1,53 @@
+[
+    {
+        "ID":       "000",
+        "name":        "Kitchen",
+        "description":  "It's a kitchen.",
+
+        "connections":
+        [
+            {
+                "direction":    "n",
+                "room":         "001"
+            },
+            {
+                "direction":    "nw",
+                "room":         "002"
+            }
+        ]
+    },
+    {
+        "ID":       "001",
+        "name":        "Living Room",
+        "description":  "It's a living room.",
+
+        "connections":
+        [
+            {
+                "direction":    "s",
+                "room":         "000"
+            },
+            {
+                "direction":    "sw",
+                "room":         "002"
+            }
+        ]
+    },
+    {
+        "ID":       "002",
+        "name":        "Bedroom",
+        "description":  "It's a bedroom.",
+
+        "connections":
+        [
+            {
+                "direction":    "se",
+                "room":         "000"
+            },
+            {
+                "direction":    "ne",
+                "room":         "001"
+            }
+        ]
+    }
+]
